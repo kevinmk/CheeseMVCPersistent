@@ -15,7 +15,7 @@ namespace CheeseMVC.Controllers
 
         public CategoryController(CheeseDbContext dbContext)
         {
-            context=dbContext;
+            context = dbContext;
         }
 
         public IActionResult Index()
@@ -27,7 +27,7 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Add()
         {
-            AddCategoryViewModel addCategoryViewModel=new AddCategoryViewModel();
+            AddCategoryViewModel addCategoryViewModel = new AddCategoryViewModel();
             return View(addCategoryViewModel);
         }
 
@@ -38,7 +38,7 @@ namespace CheeseMVC.Controllers
             {
                 CheeseCategory newCategory = new CheeseCategory
                 {
-                    Name=addCategoryViewModel.Name
+                    Name = addCategoryViewModel.Name
                 };
 
                 context.Categories.Add(newCategory);
